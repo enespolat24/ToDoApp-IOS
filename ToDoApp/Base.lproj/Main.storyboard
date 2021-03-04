@@ -40,7 +40,13 @@
                             <constraint firstItem="zwU-Bp-QRe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MfD-C9-FuB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KWi-H5-r4A"/>
+                    <navigationItem key="navigationItem" id="KWi-H5-r4A">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="jQj-dg-Z1F">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="xyd-qe-UCZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="zwU-Bp-QRe" id="c3X-kK-am9"/>
                     </connections>
@@ -49,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="51.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="KZg-73-OlA">
             <objects>
-                <viewController id="jMo-yd-ghl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="jMo-yd-ghl" customClass="TaskViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fez-ba-M9U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +68,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neG-FO-CRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876.8115942028987" y="51.5625"/>
+            <point key="canvasLocation" x="1991" y="52"/>
+        </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="kcT-nC-oYl">
+            <objects>
+                <viewController storyboardIdentifier="entry" id="8Vf-qS-iQF" customClass="EntryViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iTZ-A7-hdc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ni-qF-Sx8">
+                                <rect key="frame" x="20" y="64" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="DYu-jK-WY8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V70-6B-bEc"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="2Ni-qF-Sx8" firstAttribute="top" secondItem="V70-6B-bEc" secondAttribute="top" constant="20" id="b0l-et-Dnm"/>
+                            <constraint firstItem="V70-6B-bEc" firstAttribute="trailing" secondItem="2Ni-qF-Sx8" secondAttribute="trailing" constant="20" id="dUy-AV-woe"/>
+                            <constraint firstItem="2Ni-qF-Sx8" firstAttribute="leading" secondItem="V70-6B-bEc" secondAttribute="leading" constant="20" id="x8I-yE-9Ty"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="field" destination="2Ni-qF-Sx8" id="9Qq-ms-GKN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Rb-rx-5PY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="769"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ich-ma-MfY">
@@ -86,6 +125,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
