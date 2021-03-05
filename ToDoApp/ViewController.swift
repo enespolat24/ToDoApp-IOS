@@ -12,8 +12,21 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
         
     var tasks = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Tasks"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //setup
+        if !UserDefaults().bool(forKey: "setup"){
+            UserDefaults().set(true,forKey: "setup")
+            UserDefaults().set(0,forKey: "count")
+        }
+        
         // Do any additional setup after loading the view.
         //get tasks
     }
